@@ -30,7 +30,6 @@ results/
 .DS_Store
 *.ipynb_checkpoints
 
-# Roboflow datasets / raw datasets
+# Datasets (Roboflow raw datasets)
 Classification-5/
 Train-4/
-
