@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  medical-dashboard:
+    build: .
+    container_name: chestxray_ai_container
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
+    # Uncomment below for NVIDIA GPU support if running on Linux with NVIDIA Docker
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]

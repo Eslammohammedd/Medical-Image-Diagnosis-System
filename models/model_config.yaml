@@ -1,0 +1,31 @@
+# model_config.yaml
+# Central model registry for the ChestX-Ray AI system.
+
+model:
+  architecture: densenet121          # options: densenet121 | resnet50 | vit_base
+  num_classes: 5
+  pretrained: true                   # use ImageNet weights for initialisation
+  dropout: 0.3
+
+classes:
+  - "Bacterial Pneumonia"
+  - "Covid-19"
+  - "Normal"
+  - "Pneumonia"
+  - "Viral Pneumonia"
+
+input:
+  image_size: 224
+  channels: 3
+  normalisation:
+    mean: [0.485, 0.456, 0.406]
+    std:  [0.229, 0.224, 0.225]
+
+inference:
+  confidence_threshold: 0.30        # minimum probability to report a finding
+  top_k: 5                          # number of classes to display in the UI
+  device: auto                      # auto | cpu | cuda
+
+weights:
+  best:   "models/weights/best_model.pth"
+  latest: "models/weights/latest_model.pth"

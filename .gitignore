@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+venv_gpu/
+.env
+
+# Data (Do not upload raw datasets)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Models weights (Large files)
+models/weights/*.pth
+!models/weights/.gitkeep
+
+# Logs & Results
+logs/
+results/
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+*.ipynb_checkpoints
+
+# Roboflow datasets / raw datasets
+Classification-5/
+Train-4/
+

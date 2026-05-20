@@ -1,0 +1,27 @@
+# configs/stage2_finetune.yaml
+# Fine-tuning stage: unfreeze the backbone and train at a lower LR.
+# Run after stage1_chexpert.yaml converges.
+
+experiment:
+  name: "medical_xray_finetune_v1"
+  seed: 42
+
+data:
+  img_size: 224
+  batch_size: 8         # smaller batch → more gradient updates per epoch
+  num_workers: 2
+  train_path: "Classification-5/train"
+  val_path:   "Classification-5/valid"
+
+model:
+  architecture: "densenet121"
+  num_classes: 5
+  pretrained: false       # load from stage-1 checkpoint
+  checkpoint: "models/weights/medical_xray_local_v1_real_weights.pth"
+
+training:
+  epochs: 10
+  lr: 0.00001             # 10× lower than stage 1
+  weight_decay: 0.00001
+  loss_fn: "FocalLoss"    # helps address class imbalance
+  unfreeze_all: true      # fine-tune the full network

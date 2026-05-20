@@ -1,0 +1,38 @@
+# configs/stage3_final.yaml
+# Final production training: full network, aggressive augmentation,
+# cosine LR schedule, and strict early stopping.
+
+experiment:
+  name: "medical_xray_production_v1"
+  seed: 42
+
+data:
+  img_size: 224
+  batch_size: 8
+  num_workers: 2
+  train_path: "Classification-5/train"
+  val_path:   "Classification-5/valid"
+
+model:
+  architecture: "densenet121"
+  num_classes: 5
+  pretrained: false
+  checkpoint: "models/weights/medical_xray_finetune_v1_real_weights.pth"
+
+training:
+  epochs: 20
+  lr: 0.000005
+  weight_decay: 0.00001
+  loss_fn: "FocalLoss"
+  scheduler: "CosineAnnealingLR"
+  t_max: 20               # matches total epochs
+  unfreeze_all: true
+
+early_stopping:
+  patience: 5
+  monitor: "val_loss"
+
+export:
+  save_best: true
+  save_path: "models/weights/best_model.pth"
+  onnx_export: false        # set true for edge deployment

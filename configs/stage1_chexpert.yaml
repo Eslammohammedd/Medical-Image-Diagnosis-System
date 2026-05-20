@@ -1,0 +1,22 @@
+# configs/stage1_chexpert.yaml
+experiment:
+  name: "medical_xray_local_v1"
+  seed: 42
+
+data:
+  img_size: 224
+  batch_size: 16  # Reduced for local stability
+  num_workers: 2
+  train_path: "Classification-5/train"
+  val_path: "Classification-5/valid"
+
+model:
+  architecture: "densenet121"
+  num_classes: 5  # Adjusted to match your dataset (Covid, Normal, etc.)
+  pretrained: true
+
+training:
+  epochs: 15
+  lr: 0.0001
+  weight_decay: 0.00001
+  loss_fn: "CrossEntropyLoss" # Standard for single-label per image dataset
