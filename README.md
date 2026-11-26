@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
   <img src="https://img.shields.io/badge/Gemini-1.5_Flash-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemini">
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License">
+  <a href="https://github.com/Eslammohammedd/Medical-Image-Diagnosis-System/actions/workflows/ci.yml"><img src="https://github.com/Eslammohammedd/Medical-Image-Diagnosis-System/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <br><br>
   <strong>Clinical-Grade Multi-Modal X-Ray Diagnostic Dashboard</strong>
   <br>
