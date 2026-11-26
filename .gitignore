@@ -33,3 +33,16 @@ results/
 # Datasets (Roboflow raw datasets)
 Classification-5/
 Train-4/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
