@@ -196,5 +196,14 @@ To train the DenseNet121 classifier from scratch on your own dataset:
 
 ## 🛡️ License & Disclaimer
 
+## ⚠️ Limitations
+
+- The model is trained on a specific chest X-ray dataset and may not generalize to other populations, scanners, or acquisition protocols.
+- Outputs are probability estimates, not clinical decisions; low-confidence cases require human review.
+- External AI APIs (Gemini, Roboflow, Claude) are optional enhancements and require valid keys in `.env`.
+- Grad-CAM highlights model attention but does not provide a medical explanation.
+
+---
+
 * **Disclaimer**: This system is AI-assisted and intended for educational and research purposes only. It is **not** a certified medical diagnostic device. Outputs should always be reviewed by a licensed radiologist or medical professional.
 * **License**: Distributed under the MIT License. See `LICENSE` for more information.
