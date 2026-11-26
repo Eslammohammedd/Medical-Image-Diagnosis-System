@@ -9,7 +9,7 @@ timm>=0.9.12                  # Vision Transformers (ViT)
 # ── Image Processing ──────────────────────────────────────────────────────────
 pillow>=10.1.0
 opencv-python>=4.8.1.78
-numpy>=1.26.2
+numpy>=2.5.5
 
 # ── AI APIs ──────────────────────────────────────────────────────────────────
 requests>=2.31.0              # Gemini + Roboflow REST calls
